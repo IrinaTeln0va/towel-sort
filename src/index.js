@@ -1,6 +1,14 @@
+module.exports = function towelSort(matrix = []) {
+  let result = [];
 
-// You should implement your task here.
+  for (let i = 0; i < matrix.length; i++) {
+    const subArray = matrix[i];
+    if (i % 2 != 0) {
+      subArray.sort((a,b) => b - a);
+    }
 
-module.exports = function towelSort (matrix) {
-  return [];
+    result = [...result, ...subArray];
+  }
+
+  return result;
 }
